@@ -3419,7 +3419,7 @@
 
         function getData(start) {
             $(".background").show()
-            var url = `http://localhost:2080/chat?count=100&reverse=true&channelID=${channelID}`
+            var url = `/chat?count=100&reverse=true&channelID=${channelID}`
             if (start) {
                 url = url + "&start=" + start
             }
