@@ -1,13 +1,8 @@
 'use strict';
 
-if (process.argv.length < 2) {
-    console.error('Usage: `node proxy.js PORT`');
-    return process.exit(1);
-}
-
 var httpProxy = require('http-proxy');
 var apiURL = 'https://www.bitmex.com';
-var port = process.argv[2];
+var port = process.argv[2] || 2080;
 
 var proxy = httpProxy.createProxyServer({});
 

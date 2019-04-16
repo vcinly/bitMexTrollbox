@@ -2704,6 +2704,7 @@
     <style>
         .load-before {
             text-align: center;
+            font-size:1rem;
         }
 
         .shortDate {
@@ -2875,7 +2876,15 @@
             }
         }
     </style>
-    <title>⤢ BitMEX Trollbox</title>
+    <style type="text/css">
+        @media (max-width: 800px) {
+            .popOutWindow {
+                font-size: 30px!important;
+            }
+        }
+    </style>
+    <script>(function() { var phoneScale = parseInt(window.screen.width) / 750; document.write('<meta name="viewport" content="width=750, minimum-scale=' + phoneScale + ', maximum-scale=' + phoneScale + ', user-scalable=no">'); })();</script>
+    <title>BitMEX Trollbox</title>
 </head>
 
 
@@ -3480,7 +3489,7 @@
 
             let doneDiv = null
             if (before) {
-                doneDiv = $("<div style='text-align: center;border-top:1px solid rgb(34, 34, 34)'>Load Finished</div>")
+                doneDiv = $("<div style='text-align: center;border-top:1px solid rgb(34, 34, 34);font-size:1rem;'>Load Finished</div>")
                 $('.load-before').after(doneDiv)
             }
 
