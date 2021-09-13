@@ -12,12 +12,19 @@ var server = require('http').createServer(function(req, res) {
     delete req.headers['referer'];
     res.setHeader('Access-Control-Allow-Origin', '*');
 
-    req.url = '/api/v1' + req.url;
-    proxy.web(req, res, {
-        changeOrigin: true,
-        target: apiURL,
-        rejectUnauthorized: false
-    });
+    if (req.url == "/mexbox") {
+        require('fs').createReadStream(`${__dirname}/mexbox.html`).pipe(res);
+    } else {
+        req.url = '/api/v1' + req.url;
+        console.log('Start proxy ' + req.url)
+        proxy.web(req, res, {
+            changeOrigin: true,
+            target: apiURL,
+            rejectUnauthorized: false
+        }, (e) => {
+            console.log(e)
+        });
+    }
 });
 
 server.listen(port);
