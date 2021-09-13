@@ -3445,7 +3445,7 @@
 
         function getData(start) {
             $(".background").show()
-            var url = `/chat?count=100&reverse=true&channelID=${channelID}`
+            var url = `./chat?count=100&reverse=true&channelID=${channelID}`
             // var url = `http://34.84.159.75:2080/chat?count=100&reverse=true&channelID=${channelID}`
             if (start) {
                 url = url + "&start=" + start
@@ -3476,7 +3476,7 @@
                 let tpl = `<div class="chatSection" style="border-color: ${color};">
                 <span class="chatMessage showUsername" style="color: ${color};">
                     <a class="user" data-user="${x.user}" title="">
-                        <span class="shortDate" title="">[${x.date.match(/\d\d:\d\d/)[0]}] </span>
+                        <span class="shortDate" title="">[${(new Date(x.date).toTimeString()).match(/\d\d:\d\d/)[0]}] </span>
                         <span class="userName">${x.user}: </span>
                         <span class="mute" data-chat-id="${x.id}" data-user="${x.user}" style="background: ${color};"></span>
                     </a>
