@@ -2697,10 +2697,18 @@
             right: 0
         }
     </style>
-    <!-- <link rel="stylesheet" href="https://static.bitmex.com/fonts-432254ab1938712dac702ab491ac2cbf.css"> -->
-    <link rel="stylesheet" href="https://static.bitmex.com/lightThemePublic-bc048e371323dab406326d7adba99c36.css">
     <link rel="stylesheet" href="https://static.bitmex.com/1-a37e062c3f808b22bfdf.css">
-    <link rel="stylesheet" href="https://www.bitmex.com/fonts-432254ab1938712dac702ab491ac2cbf.css">
+    <link rel="stylesheet" href="https://static.bitmex.com/lightThemePublic-bc048e371323dab406326d7adba99c36.css">
+    <link rel="stylesheet" href="https://static.bitmex.com/assets/font/OpenSans-Semibold-2b0c0339e7ba82d6f9f44efec36d61f6.woff">
+    <link rel="stylesheet" href="https://static.bitmex.com/assets/font/icomoon-2006cdafb82f44b1f21a7954872e0600.woff">
+    <link rel="stylesheet" href="https://static.bitmex.com/assets/font/OpenSans-Regular-bcfeda5c73be972f16d97ac2ff8d148d.woff">
+    <!-- <link rel="stylesheet" href="https://static.bitmex.com/assets/font/OpenSans-Semibold-e7f12f40e5575f0a2d15d89850a1dd6e.woff2"> -->
+    <!-- <link rel="stylesheet" href="https://static.bitmex.com/assets/font/icomoon-5118040f26cb4034637ccce23d011b56.woff2"> -->
+    <!-- <link rel="stylesheet" href="https://static.bitmex.com/assets/font/OpenSans-Regular-2410214f447f4c5ac72866b5d488bfe7.woff2"> -->
+    <link rel="stylesheet" href="https://static.bitmex.com/assets/font/OpenSans-Semibold-2b0c0339e7ba82d6f9f44efec36d61f6.woff">
+
+    <!-- <link rel="stylesheet" href="https://static.bitmex.com/fonts-432254ab1938712dac702ab491ac2cbf.css"> -->
+    <!-- <link rel="stylesheet" href="https://www.bitmex.com/fonts-432254ab1938712dac702ab491ac2cbf.css"> -->
     <style>
         .load-before {
             text-align: center;
@@ -3438,6 +3446,7 @@
         function getData(start) {
             $(".background").show()
             var url = `/chat?count=100&reverse=true&channelID=${channelID}`
+            // var url = `http://34.84.159.75:2080/chat?count=100&reverse=true&channelID=${channelID}`
             if (start) {
                 url = url + "&start=" + start
             }
@@ -3471,11 +3480,11 @@
                         <span class="userName">${x.user}: </span>
                         <span class="mute" data-chat-id="${x.id}" data-user="${x.user}" style="background: ${color};"></span>
                     </a>
-                    <span class="message">${x.html.replace('/img/emoji/bitmex.png', 'https://www.bitmex.com/img/emoji/bitmex.png')}</span>
+                    <span class="message">${x.html.replace('/assets/img/emoji/bitmex.png', 'https://www.bitmex.com/img/emoji/bitmex.png')}</span>
                 </span>
                 ${x.children ? (before ? x.children : x.children).map(z => `
                     <span class="chatMessage hideUsername" style="color: ${color};">
-                        <span class="message">${z.html.replace('/img/emoji/bitmex.png', 'https://www.bitmex.com/img/emoji/bitmex.png')}</span>
+                        <span class="message">${z.html.replace('/assets/img/emoji/bitmex.png', 'https://www.bitmex.com/img/emoji/bitmex.png')}</span>
                     </span>
                     `).join('') : ""}
             </div>`
